@@ -1,0 +1,13 @@
+<section>
+  <div class="row">
+      <div class="col-sm-12">
+          <app-car-item
+            (carSelected)="onCarWasSelected(myCar)"
+            *ngFor="let myCar of car | searchFilter | categoryFilter ; let i = index"
+            [cars]="myCar"
+            [id]="i"
+          ></app-car-item>
+
+      </div>
+    </div>
+</section>

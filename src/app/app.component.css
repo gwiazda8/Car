@@ -1,0 +1,132 @@
+
+/*General*/
+
+.no-padding {
+  padding: 0;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.menu, .cars {
+  padding: 30px;
+}
+
+.delete-car, .comeback {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 24px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.details .comeback {
+  padding: 10px;
+}
+
+
+/*LeftPanel*/
+
+
+.menu {
+  background-color: #064112;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: -350px;
+  width: 300px;
+  bottom: auto;
+  z-index: 100;
+  transition: all 0.2s ease;
+  top: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.menu.open {
+  left: 0px;
+}
+
+.list-group {
+  color: #14451b;
+}
+
+.list-group li {
+  cursor: pointer;
+}
+
+.form-group button {
+  margin-top: 20px;
+}
+
+.form-control {
+  margin-bottom: 20px;
+}
+
+
+/*Cars*/
+
+.cars {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  height: 100%;
+  transition: all 0.2s ease;
+  z-index: 2;
+  width: 100%
+}
+
+.cars.open {
+  left: 350px;
+  width: calc(100% - 350px);
+}
+
+.car-wrapper {
+  position: relative;
+  color: #14151d;
+  border: 2.5px solid #032e09;
+  border-radius: 2%;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+.car-wrapper .delete-car {
+  opacity: 0;
+  transition: all 0.2s ease;
+  color: red;
+}
+
+.car-wrapper:hover>.delete-car {
+  opacity: 1;
+}
+
+.car-wrapper footer.car-info h2 {
+  font-size: 20px;
+  text-align: center;
+}
+
+
+/*Media*/
+
+@media screen and (max-width: 768px) {
+  .menu, .cars {
+    padding: 15px !important;
+  }
+  .menu {
+    width: 100%;
+    left: -100%;
+  }
+  .menu.open {
+    left: 0;
+  }
+  .cars {
+    left: 0;
+    width: 100%;
+  }
+  .cars.open {
+    left: 0px;
+    width: 100%;
+  }
+}

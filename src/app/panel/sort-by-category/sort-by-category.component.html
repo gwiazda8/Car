@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-sm-12">
+    <p>Kategorie samochodów</p>
+    <ul class="list-group" >
+      <li class="list-group-item"
+       *ngFor="let category of categories"
+        [ngClass]="{list: value == category}"
+        (click)="onSelectedCategory()"
+        >{{category}}</li>
+    </ul>
+
+  </div>
+
+</div>

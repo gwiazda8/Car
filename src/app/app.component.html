@@ -1,0 +1,16 @@
+<div class="wrapper no-padding" *ngIf="!carsService.carDetailsVisible; else showDetails">
+
+
+    <div class="menu open">
+      <app-panel></app-panel>
+    </div>
+
+    <div class="cars open">
+        <app-cars-list (emitCars)="carWasSelected = $event"></app-cars-list>
+   </div>
+
+</div>
+
+<ng-template #showDetails>
+  <app-car-details *ngIf="carsService.carDetailsVisible" [car]="carWasSelected"></app-car-details>
+</ng-template>

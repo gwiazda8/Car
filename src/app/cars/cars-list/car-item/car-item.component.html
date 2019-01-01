@@ -1,0 +1,35 @@
+<div class="col-sm-6 col-md-3">
+  <div class="row">
+    <div class="col-xs-12">
+      <a href="#" (click)="onSelected()">
+        <div class="car-wrapper">
+
+          <header class="car-image">
+            <img [src]="cars.imagePath" alt="" class="img-responsive" id="foto">
+          </header>
+          <footer class="car-info">
+            <h2>{{cars.name}}</h2>
+
+            <p>Cena <strong>{{cars.price}}</strong> zł</p>
+            <hr>
+            <p>Rok produkcji <strong>{{cars.yearOfProduction}}</strong></p>
+            <hr>
+            <p>Przebieg <strong>{{cars.vehicleMileage}}</strong> km</p>
+            <hr>
+            <p>Moc silnika <strong>{{cars.enginePower}}</strong> kw</p>
+            <hr>
+            <p>Kategoria <strong class="label label-success">{{cars.category | uppercase}}</strong>
+            </p>
+          </footer>
+          <div class="delete-car">
+            <button type="button" class="close" aria-label="Close" (click)="removeItem(id)">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+        </div>
+      </a>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <section class="details">
+          <div class="details-image col-md-4">
+                <img [src]="car.imagePath" alt="" class="img-responsive" id="foto" >
+          </div>
+          <div class="details-info col-md-push-1 col-md-4">
+            <h2>Marka <strong>{{car.name}}</strong></h2>
+            <hr>
+            <p>Cena <strong>{{car.price}} </strong>zł</p>
+            <hr>
+            <p>Rok produkcji <strong>{{car.yearOfProduction}} </strong>rok</p>
+            <hr>
+            <p>Przebieg <strong>{{car.vehicleMileage}} </strong>km</p>
+            <hr>
+            <p>Moc silnika <strong>{{car.enginePower}} </strong> kw</p>
+            <hr>
+
+            <p> <span class="label label-success">{{car.category | uppercase}}</span> </p>
+            <hr>
+          </div>
+          <div class="comeback"><button type="button" class="btn btn-success" (click)="comeback()" name="button">Wróć</button></div>
+      </section>
+    </div>
+
+
+  </div>
+</div>

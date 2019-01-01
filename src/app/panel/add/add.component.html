@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-sm-12">
+    <p>Dodaj samochod do magazynu</p>
+    <form [formGroup]="sForm" (ngSubmit)="addNewCar()">
+       <div class="form-group">
+         <label for="nameCar">Nazwa Samochodu</label>
+         <input type="text" class="form-control" id="nameCar" formControlName="name" name="nameCar" placeholder="Nazwa somochodu">
+
+         <div *ngIf="!sForm.get('name').valid && sForm.get('name').touched" class="alert alert-danger">
+               <strong>Uwaga</strong> Podaj nazwę samochodu
+         </div>
+
+         <label for="priceCar">Cena  Samochodu w zł</label>
+         <input required type="number" class="form-control" id="priceCar" formControlName="priceCar" name="priceCar" placeholder="cena samochodu">
+
+         <div *ngIf="!sForm.get('priceCar').valid && sForm.get('priceCar').touched" class="alert alert-danger">
+               <strong>Uwaga</strong> Podaj cene samochodu
+         </div>
+
+
+
+         <label for="yearOfProductionCar">Rok Produkcji Samochodu </label>
+         <input type="number" class="form-control" id="yearOfProductionCar" formControlName="yearOfProductionCar" name="yearOfProduction" placeholder="rok produkcji" required>
+
+         <div *ngIf="!sForm.get('yearOfProductionCar').valid && sForm.get('yearOfProductionCar').touched" class="alert alert-danger">
+               <strong>Uwaga</strong> Podaj rok produkcji samochodu
+         </div>
+
+         <label for="vehicleMileageCar">Przebieg Samochodu w km</label>
+         <input required type="number" class="form-control" id="vehicleMileageCar" formControlName="vehicleMileageCar" name="vehicleMileageCar" placeholder="przebieg samochodu">
+
+         <div *ngIf="!sForm.get('vehicleMileageCar').valid && sForm.get('vehicleMileageCar').touched" class="alert alert-danger">
+               <strong>Uwaga</strong> Podaj przebieg samochodu
+         </div>
+
+         <label for="enginePowerCar">Moc Samochodu w kw</label>
+         <input required type="number" class="form-control" id="enginePowerCar"  formControlName="enginePowerCar" name="enginePowerCar" placeholder="moc silnika">
+
+         <div *ngIf="!sForm.get('enginePowerCar').valid && sForm.get('enginePowerCar').touched" class="alert alert-danger">
+               <strong>Uwaga</strong> Podaj moc samochodu
+         </div>
+
+         <label for="imageCar">Link do Samochodu</label>
+         <input type="text" class="form-control" id="imageCar" formControlName="imageCar" name="imageCar" placeholder="Link do zdjęcia">
+
+         <div *ngIf="!sForm.get('imageCar').valid && sForm.get('imageCar').touched" class="alert alert-danger">
+               <strong>Uwaga</strong> Podaj ścieżkę do zdjęcia samochodu
+         </div>
+
+         <label for="categoryCar">Wybierz kategorie</label>
+         <select  class="form-control" id="category" formControlName="categoryCar" name="categoryCar">
+             <option  value="Rodzinny">Rodzinny</option>
+             <option  value="Sportowy">Sportowy</option>
+
+         </select>
+         <div *ngIf="!sForm.get('categoryCar').valid && sForm.get('categoryCar').touched" class="alert alert-danger">
+               <strong>Uwaga</strong> Wybierz kategorie samochodu
+         </div>
+
+         <button class="btn btn-success pull-right" [disabled]="sForm.invalid" type="submit">Dodaj</button>
+         <div class="clearfix"></div>
+
+       </div>
+     </form>
+        <hr>
+  </div>
+
+</div>
